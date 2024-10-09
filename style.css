@@ -1,0 +1,701 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    list-style: none;
+}
+:root{
+    --main-color:  #154360 ;
+}
+header{
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    border: 2px solid rgba(167, 31, 31, 0.66);;
+    padding: 0.5rem 1.5rem;
+    border-radius: 3rem;
+    z-index: 1000;
+}
+/*////////////// nav bar////////////////////////////*/
+.nav-link{
+    display: flex; 
+    gap: 2rem;
+}
+li a{
+    position: relative;
+    font-size: 1.2rem;
+    color: #0b5345;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 40;
+}
+li a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right,rgba( 57, 73, 171 ),rgba( 231, 76, 60 ));
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s ease;
+
+}
+li a:hover::after{
+   transform-origin: left;
+   transform: scaleX(1);
+    width: 100%;
+}
+
+#menu-icon{
+    font-size: 2rem;
+    display: none;
+}
+/*////////////// section Home ////////////////////////////*/
+.Home{
+    min-height: 100vh;
+    padding: 8rem 12%;
+    width: 100%;
+    position: relative;
+    background: url(img/bg9.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.Home .Home-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+}
+.Home .Home-container .info-box{
+    position: relative;
+    width: 600px;
+    height: 600px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255,.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+/*////////////////Animation Photo////////////////*/
+.Home-img img{
+    
+    width: 25vw;
+    border-radius: 50%;
+    animation: floatImage 4s ease-in-out infinite;
+}
+@keyframes floatImage {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-2.4rem);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+/*////////////////////////////////*/
+.info-box{
+   
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+
+}
+.info-box h3{
+    font-size: 2.5rem;
+    font-weight: 700;
+    
+    
+}
+.info-box span{
+    
+    background:linear-gradient(to right,rgb(0, 157, 255),rgb(255, 0, 255)) ;
+    background-clip: text;
+    color: transparent;
+}
+.info-box h1{
+    font-size: 4rem;
+    font-weight: 700;
+    color: #1b2631 ;
+}
+.info-box h4{
+    font-size: 1.2rem;
+    color: #78281f;
+}
+
+.socail-media a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: .5s ease;
+    text-decoration: none;
+}
+.socail-media a:hover{
+    background: var(--main-color);
+    color: rgb(157, 206, 237) ;
+    box-shadow: 0 0 1rem ;
+}
+
+
+.btn-group{
+    display: flex;
+    gap: 1rem;
+    text-align: center;
+    justify-content: center;
+}
+.btn{
+    border-radius: 3rem;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid #4a235a;
+    color:  #0b5345 ;
+    cursor: pointer;
+    font-weight: 500;
+    text-wrap: nowrap;
+    transition: 0.2s ease-in-out; 
+}
+.btn:hover{
+    background: linear-gradient(to right,rgba( 41, 128, 185),rgb(255, 0, 255));
+    color: white;
+}
+
+
+/*////////////// Skills ////////////////////////////*/
+.Skills{
+    min-height: 100vh;
+    padding: 5rem 12%;
+    width: 100%;
+    position: relative;
+    background: url(img/RB1.jpg) no-repeat;
+    background-size: cover;   
+}
+
+.section-title{
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 600;
+    margin-bottom:  0.5rem;
+}
+.Skills-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+.grid{ /*การกำหนดการ์ดให้เรียงเป็น3แถว*/
+   
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem; 
+}
+.skill-card{
+    
+    text-align: center;
+    border: 2px solid rgb(33, 31, 31);
+    border-radius: 3rem;
+    padding: 3rem;
+    background-color:  #f2f3f4    ;
+    backdrop-filter: blur(20px);
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* จัดตำแหน่งให้เนื้อหาตรงกลางแนวนอน */
+    justify-content: center; /* จัดตำแหน่งให้เนื้อหาตรงกลางแนวตั้ง */
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    
+}
+.skill-card:hover{ /* พื้นหลังเวลา hover */
+    transform: scale(1.02);
+    backdrop-filter: blur(20px);
+    background: transparent;
+    border: 2px solid rgbargb(232, 227, 227);
+    background:    #3a42426e  ;
+    color: #fff;
+    
+}
+/*.skill-card i {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+} ใส่โค้ดนี้กรณีใช้เป็นไอคอน ไม่ใช่รูปภาพ
+*/
+.skill-card span {
+    font-size: 1.5rem;
+    font-weight: 500;
+    background: linear-gradient(to right,rgba( 41, 128, 185),rgb(255, 0, 255));
+    background-clip: text;
+    color: transparent;
+}
+/*///////////////////// Bildung /////////////////////////*/
+.Bildung{
+    min-height: 100%;
+    padding: 5rem 10%;
+    width: 100%;
+    position: relative;
+    background: url(img/RB3.jpg) no-repeat;
+    background-size: cover; 
+}
+.info-bildung {
+    display: flex;
+    justify-content: center; /* จัดกึ่งกลางในแนวนอน */
+    align-items: center; /* จัดกึ่งกลางในแนวตั้ง */
+    height: 50vh; /* กำหนดความสูงเต็มจอ */
+    text-align: center; /* จัดข้อความให้อยู่กลาง */
+}
+
+.info-bildung .bd-text{
+    width: 50%;
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    gap: 1rem;
+    transform: scale(1.02);
+    background-color:  #f2f3f4    ;
+    backdrop-filter: blur(20px);
+    background: transparent;
+    border: 2px solid rgb(185, 200, 224);
+    border-radius: 3rem;
+    color: #070707;
+}
+.bd-container h2{
+    text-align: center;
+}
+.bd-container .image-container {
+    
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 10px;
+}
+.bd-container .image-container .image{
+    height:420px;
+    width: 300px;
+    border: 2px solid #f5f3f3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+    overflow: hidden;
+    cursor: pointer;
+}
+.bd-container .image-container .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: .2s linear;
+}
+.bd-container .image-container .image img:hover{
+    transform: scale(1.1);
+}
+.bd-container .popup-image{
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    background: rgba(0, 0, 0, .9);
+    height: 100%;
+    width: 100%;
+    z-index: 100;
+    display: none;
+}
+.bd-container .popup-image span{
+    position: absolute;
+    top: 0; right: 10px;
+    font-size: 40px;
+    font-weight: bolder;
+    color: #fff;
+    cursor: pointer;
+    z-index: 100;
+}
+.bd-container .popup-image img{
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    border: 5px solid #fff;
+    border-radius: 5px;
+    width: 450px;
+    object-fit: cover;
+}
+@media (max-width:768px) {
+    .bd-container .popup-image img{
+        width: 95%;
+    }
+}
+
+/*///////////////////// Lebenslauf /////////////////////////*/
+.Lebenslauf {
+    min-height: 100vh;
+    padding: 5rem 10%;
+    width: 100%;
+    position: relative;
+    background: url(img/RB2.jpg) no-repeat;
+    background-size: cover;
+}
+
+.lb-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    max-width: 1200px; /* กำหนดความกว้างสูงสุด */
+    width: 65%; /* ใช้ความกว้างเต็มที่ในหน้าจอเล็ก */
+    margin: 0 auto; /* จัดให้อยู่ตรงกลาง */
+    text-align: center;
+    background-color: #f2f3f4;
+    backdrop-filter: blur(20px);
+    background: transparent;
+    border: 2px solid rgb(185, 200, 224);
+    border-radius: 3rem;
+    padding: 2rem; /* เพิ่ม padding ภายใน */
+}
+
+.lb-container .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lb-container .image-container .image {
+    height: 480px;
+    width: 350px;
+    border: 2px solid #f5f3f3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.lb-container .image-container .image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: .2s linear;
+}
+
+.lb-container .image-container .image img:hover {
+    transform: scale(1.1);
+}
+
+.lb-container .popup-image img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 5px solid #fff;
+    border-radius: 5px;
+    width: 450px;
+    object-fit: cover;
+}
+
+
+
+
+/*///////////////////// Project /////////////////////////*/
+.Projects{
+    min-height: 100vh;
+    padding: 5rem 12%;
+    width: 100%;
+    position: relative;
+    background: url(img/laptop.jpg) no-repeat;
+    background-size: cover;  
+    color:  #a04000 ;
+}
+.project-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap: 2rem;
+}
+.project-card{
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    background: #f4f2f1;
+    border: 2px solid    #a04000   ;
+    border-radius: 3rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.project-card:hover{
+    background-color:  #212f3c;
+
+    color: white;
+    transform: translateY(-10px)scale(1.02);
+}
+.project-card img{
+    max-width: 300px;
+    object-fit: cover;
+    width: 20vw;
+    border-radius: 1rem;
+}
+.project-card:hover{
+    border: 2px solid white;
+    color: white;
+}
+
+.project-card:hover .btn:hover{
+    border: 2px solid white;
+
+}
+
+/*///////////////////// Kontakt/////////////////////////*/
+.Kontakt{
+    
+    min-height: 100vh;
+    padding: 5rem 12%;
+    width: 100%;
+    position: relative;
+    background: url(img/pink-keyboard-mouse-with-notepad.jpg) no-repeat;
+    background-size: cover;  
+    
+}
+.Kontakt .Kontakt-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+    width: 80%;
+    height: 600px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255,.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+    margin-left: 5rem;
+    
+}
+.Kontakt h2{
+    margin-bottom: 3rem;
+    color: #880e4f;
+    text-align: center;
+    font-size: 3rem;
+}
+.Kontakt form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 5rem 0;
+    text-align: center;
+}
+
+.Kontakt form .input-box input,
+.Kontakt form textarea{
+    width: 85%; /* ปรับให้ input พอดีกับกล่อง */
+    padding: 3%; 
+    font-size: 1rem; /* ลดขนาดฟอนต์ลงเพื่อให้ input เล็กลง */
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255,.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+    margin: 1rem;
+    resize: none;
+    justify-content: center;
+    align-items: center;
+   
+}
+/*@media (max-width: 768px) {
+    .Kontakt form {
+        flex-direction: column; /* ทำให้ฟอร์มเรียงในแนวตั้งสำหรับหน้าจอเล็ก 
+    }
+
+    .input-group, .input-group-2 {
+        width: 100%; /* ขยายเต็มพื้นที่สำหรับหน้าจอเล็ก 
+    }
+
+    .Kontakt form .input-box input,
+    .Kontakt form textarea {
+        width: 100%; /* ให้ input ขยายตามความกว้างของ container 
+    }
+}*/
+/*///////////////////// footer /////////////////////////*/
+.footer{
+    background-color: #7dc1c484;
+    padding-bottom: 10px;
+   
+}
+.footer .socail-media{
+    text-align: center;
+}
+
+/*.footer ul li{
+    display: inline-block;
+    margin-left: 20px;
+    padding-top: 20px;
+   
+}
+.footer ul li a{
+    color: #092d51;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease-in-out;
+    
+}
+.footer ul li a:hover{
+    border-bottom: 3px solid transparent;   
+}*/
+.footer .copyright{
+    padding-top: 10px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Responsive Styles for Tablets and Smaller Screens */
+@media (max-width: 768px) {
+    .Home-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+    .info-box, .Home-img {
+        flex: none;
+        width: 100%;
+    }
+
+    .Home-img img {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .text h1 {
+        font-size: 2rem;
+    }
+
+    .text h3 {
+        font-size: 1.5rem;
+    }
+
+    .socail-media a {
+        font-size: 20px;
+    }
+
+    .btn-group .btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+    .grid{
+        display: inline-table;
+    }
+    .project-card img{
+        width: 650px;
+    }
+    .Kontakt .Kontakt-container{
+        width: 100%;
+        margin: 0;
+    }
+    
+}
+
+/* Responsive Styles for Mobile Phones */
+@media (max-width: 480px) {
+    header #menu-icon{
+        display: block;
+    }
+    .nav-link{
+        position: absolute;
+        top: 100%;
+        margin-top: 1rem;
+        width: 100%;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        background: transparent;
+        background-color: #fafbfccd;
+        backdrop-filter: blur(20px);
+        border: 2px solid rgba(167, 31, 31, 0.66);;
+        
+        display: none;
+    }
+    .nav-link li{
+        margin-top: 1.5rem;
+        padding: 1rem;
+    }
+    .nav-link.active{
+        display: inline-table;
+        border-radius: 3rem;
+    }
+    .Home-container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    .Home .Home-container .info-box{
+        width: 450px;
+        height: 400px;
+    }
+    
+    .Home-img img {
+        max-width: 90%;
+    }
+    .info-bildung .bd-text{
+        width: 450px;
+        background: rgba(255, 255, 255, 0.669);
+    }
+   
+    .text h1 {
+        font-size: 1.5rem;
+        
+    }
+   
+    .text h3 {
+        font-size: 1.2rem;
+    }
+
+    .socail-media a {
+        font-size: 18px;
+        margin-right: 10px;
+    }
+    .grid{
+        display: block;
+    }
+    .btn-group .btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+    .Projects h2{
+        font-size: 2rem;
+        font-weight: 600;
+    }
+    .lb-container{
+        width: fit-content;
+    }
+}
+
+
